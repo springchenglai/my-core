@@ -63,7 +63,7 @@ const binarySearch = (list, key) => {
   }
   return -1
 };
-console.log('引入的入口文件是：commonjs')
+
 exports.binarySearch = binarySearch;
 exports.defineObjType = defineObjType;
 exports.isEqual = isEqual;
