@@ -1,16 +1,19 @@
 {
   "name": "@springchenglai/utils",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "some simple utils",
-  "main": "src/index.js",
+  "main": "dist/bundle.js",
+  "module": "dist/bundle.es.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "rollup -c"
   },
   "author": "springchenglai",
   "license": "ISC",
   "devDependencies": {
     "@babel/preset-env": "7.12.17",
-    "jest": "26.6.3"
+    "jest": "26.6.3",
+    "rollup": "2.39.1"
   },
   "dependencies": {}
 }

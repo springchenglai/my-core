@@ -1,4 +1,4 @@
-import { isEqual } from './index'
+import { isEqual, defineObjType } from './index'
 
 test('传入两个空字符串，返回true', () => {
   expect(isEqual({}, {})).toBe(true)
@@ -35,3 +35,7 @@ test('传入两个数组，返回true', () => {
     isEqual([100, 'b', {name: 'value'}], [{name: 'value'}, 100, 'b'])
   ).toBe(true)
 })
+
+// test('传入一个module对象，返回Module', () => {
+//   expect(defineObjType({exports: {}}, 'Module')).toBe({})
+// })
