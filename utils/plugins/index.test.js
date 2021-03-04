@@ -1,20 +1,46 @@
 import plugin from './index'
 import { transform } from 'babel-core'
 
-const example1 = 'const a = 1;const b = 2;console.log(a == b);'
-const example2 = 'const a = 1;const b = 2;console.log(a + b);'
-const example3 = 'Object.prototype.toString.call([]) == "[object Array]"'
+const example1 = 'import plugin from "plugin";'
+const example2 = 'require("plugin");'
+const example3 = 'handle("a/b");'
 
 it('works', () => {
-  const { code } = transform(example3, {
+  const { code: code1 } = transform(example1, {
     plugins: [
       [
         plugin,
         {
-          option1: true
+          from: 'plugin',
+          to: 'utils/plugin/index.js'
         }
       ]
     ]
   });
-  expect(code).toBe('Object.prototype.toString.call([]) === "[object Array]";');
+  const { code: code2 } = transform(example2, {
+    plugins: [
+      [
+        plugin,
+        {
+          from: 'plugin',
+          to: 'utils/plugin/index.js'
+        }
+      ]
+    ]
+  });
+  const { code: code3 } = transform(example3, {
+    plugins: [
+      [
+        plugin,
+        {
+          from: 'a/b',
+          to: 'a/b/index.js'
+        }
+      ]
+    ]
+  });
+  // console.log('code1:', code1)
+  expect(code1).toBe('import plugin from "utils/plugin/index.js";');
+  expect(code2).toBe('require("utils/plugin/index.js");');
+  expect(code3).toBe(example3);
 })
