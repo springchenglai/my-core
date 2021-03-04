@@ -3,18 +3,11 @@ module.exports = {
     [
       '@babel/preset-env', 
       {
-        targets: {
-          node: 'current'
+        'targets': {
+          'browsers': ['> 1%', 'last 2 versions', 'not ie <= 8']
         }
       }
     ]
   ],
-  plugins: [
-    // [
-    //   require('./plugins/index.js').default,
-    //   {
-    //     option1: true
-    //   }
-    // ]
-  ]
+  plugins: []
 }
