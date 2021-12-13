@@ -1,6 +1,6 @@
 {
   "name": "@springchenglai/utils",
-  "version": "0.1.2",
+  "version": "0.2.2",
   "description": "some simple utils",
   "main": "dist/bundle.js",
   "module": "dist/bundle.es.js",

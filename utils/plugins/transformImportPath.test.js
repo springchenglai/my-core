@@ -1,4 +1,4 @@
-import plugin from './index'
+import plugin from './transformImportPath'
 import { transform } from 'babel-core'
 
 const example1 = 'import plugin from "plugin";'
